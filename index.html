@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="variables.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Courses</title>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header>
+            <div class="header_nav">
+                <div class="logo">Web Topics</div>
+                <div class="header_buttons">
+                    <button>🌙 Dark Mode</button>
+                    <button>❤️ Favourites</button>
+                </div>
+            </div>
+            <div class="welcome_hero-card">
+                <div>
+                    <h1>Welcome to our website !</h1>
+                    <p>We have a new design that's fresh, modern, and easy to use.</p>
+                </div>
+            </div>
+            <div class="search_nav">
+                <input type="text" id="topic" name="topic" placeholder="🔎 search the website" />
+
+                <div class="sort_by-list">
+                    <label for="sort-select">Sort by</label>
+                    <select id="sort-select">
+                        <option value="" disabled selected hidden>Default</option>
+                        <option>price</option>
+                        <option>rate</option>
+                    </select>
+                </div>
+
+                <div class="filter_by-list">
+                    <label for="filter-select">Filter by</label>
+                    <select id="filter-select">
+                        <option value="" disabled selected hidden>Default</option>
+                        <option>price</option>
+                        <option>rate</option>
+                    </select>
+                </div>
+            </div>
+            <div class="search_result">"24" Web Topics Found</div>
+
+        </header>
+        <main>
+            <div class="cards_container">
+            </div>
+        </main>
+        <footer>
+            <p>Developed with ❤️ &copy; 2023</p>
+        </footer>
+
+    </div>
+    <script src="/index.js"></script>
+</body>
+
+</html>
