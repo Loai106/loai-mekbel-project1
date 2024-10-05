@@ -9,6 +9,7 @@ body {
 
 .wrapper {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     min-height: 100vh;
 }
@@ -18,7 +19,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     background-color: var(--bg_default);
 
 }
@@ -30,37 +31,73 @@ body {
 
 .header_buttons button {
     background-color: var(--bg_default);
-    border: 1px solid #ccc;
+    border: 1px solid var(--lines-color);
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.welcome_hero-card {
+.header_welcome {
     background-color: var(--bg_default);
     width: 100%;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-
+    overflow: hidden;
+    position: relative;
 
 }
 
-.welcome_hero-card h1 {
+.triangle_container {
+    height: 75px;
+}
+
+.triangle_blue {
+    position: absolute;
+    z-index: 0;
+    height: 0;
+    width: 0;
+    border-top: 10vh solid var(--brand-primary);
+    border-right: 55vw solid transparent;
+    margin: 0;
+    padding: 0;
+    left: 0;
+}
+
+.triangle_green {
+    display: inline-block;
+    position: absolute;
+    z-index: 0;
+    height: 0;
+    width: 0;
+    border-top: 10vh solid var(--brand-secondary);
+    border-left: 55vw solid transparent;
+    margin: 0;
+    padding: 0;
+    right: 0;
+
+}
+
+.header_message {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+
+}
+
+.header_welcome h1 {
     color: var(--brand-secondary);
 }
 
 
-.welcome_hero-card h1,
-.welcome_hero-card p {
+.header_welcome h1,
+.header_welcome p {
     margin: 0;
     width: 100%;
 }
 
-.welcome_hero-card h1 {
+.header_welcome h1 {
     font-size: 1.5em;
 }
 
@@ -77,10 +114,11 @@ body {
 .search_nav input,
 .search_nav select {
     height: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--lines-color);
     padding: 0 10px;
     font-size: 16px;
     box-sizing: border-box;
+    background-color: var(--bg_default);
 }
 
 .search_nav input {
@@ -91,8 +129,8 @@ body {
 }
 
 /* For select boxes */
-.search_nav .sort_by-list,
-.search_nav .filter_by-list {
+.search_nav .sort_by--list,
+.search_nav .filter_by--list {
     width: 15%;
     position: relative;
 }
@@ -114,7 +152,7 @@ body {
 
 }
 
-.sort_by-list {
+.sort_by--list {
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -122,7 +160,7 @@ body {
 
 }
 
-.filter_by-list select {
+.filter_by--list select {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 
@@ -137,24 +175,119 @@ body {
 
 main {
     flex-grow: 1;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
+    padding: 5%;
+
 }
 
 /*hero card styling*/
 .cards_container {
+    width: 100%;
+    max-width: 1320px;
     margin: 10px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    /**/
+    /* adjusted */
+    gap: 15px;
+}
+
+
+/*  for medium screens  */
+@media (max-width: 1024px) {
+    .cards_container {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+/*   small screens (e.g., mobile) */
+@media (max-width: 768px) {
+    .cards_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header_nav {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 1em;
+    }
+
+    .header_buttons {
+        width: 50%;
+        display: flex;
+        gap: 8px;
+    }
+
+    .header_buttons button {
+        padding: 0;
+
+        font-size: 0.5em;
+        border-radius: 4px;
+    }
+
+
+
+
+    .header_buttons button {
+        width: 100%;
+
+    }
+
+
+    .header_welcome {
+        padding: 0 10px;
+        min-height: 100px;
+    }
+
+    .header_message {
+
+        text-align: center;
+    }
+
+    .header_welcome h1 {
+        font-size: 1em;
+    }
+
+    .header_welcome p {
+        font-size: 0.7em;
+    }
+
+    .triangle_blue,
+    .triangle_green {
+        border-top-width: 7vh;
+    }
+
+    .search_nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+/*   very small screens */
+@media (max-width: 480px) {
+    .cards_container {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card {
-    width: 300px;
+    width: auto;
     background-color: var(--bg_default);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .card img {
