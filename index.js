@@ -14,5 +14,19 @@ fetch('./topics.json').then(res =>res.json())
                         <p>Authour: ${topic.name}</p>
                     </div>
         </div>`)
+   
+      //details page directing on click
+      const card = cards_container.querySelector('.card');
+      card.addEventListener('click',(e)=>{
+          console.log('clicking')
+  
+      window.location.href=`details.html?id=${topic.id}`;
+   
     });
-} );
+
+ 
+})
+})
+
+
+
